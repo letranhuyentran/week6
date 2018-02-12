@@ -13,8 +13,7 @@ This week, we will cover:
 1. Download a ZIP of this repository.  Unzip the contents.
 2. In your Terminal or Command Prompt, `cd` to the application's root directory.
 3. `bundle install`
-4. `rails db:migrate`
-5. `rails db:seed`  (this is new this week)
+4. `rails db:migrate db:seed` (you can specify multiple tasks on the command line)
 6. `rails server`.  Puma should start up on port 3000.
 7. Browse to `localhost:3000`.
 
