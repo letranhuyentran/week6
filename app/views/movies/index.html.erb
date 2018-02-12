@@ -1,0 +1,21 @@
+<div class="row">
+
+  <div class="col-sm-3 my-3">
+    <%= link_to image_tag("add_new.png"), "/movies/new" %>
+  </div>
+
+  <% Movie.all.order('created_at desc').each do |movie| %>
+
+    <div class="col-sm-3 my-3 text-center">
+      <% poster_url = (movie.poster_url.present? ? movie.poster_url : 'blank_poster.png') %>
+      <%= link_to image_tag(poster_url, :class => "img-fluid"), "/movies/#{movie.id}" %>
+
+      <p>
+        <%= link_to "[Delete]", "/movies/#{movie.id}", method: "delete" %>
+        <%= link_to "[Edit]", "/movies/#{movie.id}/edit" %>
+      </p>
+    </div>
+
+  <% end %>
+
+</div>

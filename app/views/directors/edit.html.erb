@@ -1,0 +1,17 @@
+<% director = Director.find_by(id: params["id"]) %>
+
+<h1>Editing <%= director.name %></h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/directors/#{director.id}", method: "patch" do %>
+
+      <p>Name: <input value="<%= director.name %>" name="name" type="text" autofocus class="form-control"></p>
+
+      <button class="btn btn-primary">Update Director</button>
+
+    <% end %>
+
+  </div>
+</div>

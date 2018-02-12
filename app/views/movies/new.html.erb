@@ -1,0 +1,26 @@
+<h1>Add a Movie</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/movies" do %>
+
+      <p>Title: <input name="title" type="text" autofocus class="form-control"></p>
+      <p>Year: <input name="year" type="text" class="form-control"></p>
+      <p>Poster: <input name="poster_url" type="text" class="form-control"></p>
+
+      <p>Director:
+          <select name="director_id">
+            <% Director.order('name').each do |director| %>
+              <option value="<%= director.id %>">
+                <%= director.name %>
+              </option>
+            <% end %>
+          </select>
+      </p>
+      <button class="btn btn-primary">Add Movie</button>
+
+    <% end %>
+
+  </div>
+</div>

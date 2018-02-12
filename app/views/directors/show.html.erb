@@ -1,0 +1,13 @@
+<% director = Director.find_by(id: params["id"]) %>
+
+<h1><%= director.name %></h1>
+
+<p>Movies by this director:</p>
+
+<div class="row">
+  <% director.movies.each do |movie| %>
+    <div class="col-sm-3">
+      <%= link_to image_tag(movie.poster_url, class: 'img-fluid'), "/movies/#{movie.id}" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<% movie = Movie.find_by(id: params["id"]) %>
+
+<h1>Editing <%= movie.title %></h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/movies/#{movie.id}", method: "patch" do %>
+
+      <p>Title: <input value="<%= movie.title %>" name="title" type="text" autofocus class="form-control"></p>
+      <p>Year: <input value="<%= movie.year %>"  name="year" type="text" class="form-control"></p>
+      <p>Poster: <input value="<%= movie.poster_url %>" name="poster_url" type="text" class="form-control"></p>
+
+      <p>Director:
+          <select name="director_id" class="form-control">
+            <% Director.order('name').each do |director| %>
+              <option value="<%= director.id %>" <%= 'selected' if movie.director_id == director.id %> >
+                <%= director.name %>
+              </option>
+            <% end %>
+          </select>
+      </p>
+
+      <button class="btn btn-primary">Update Movie</button>
+
+    <% end %>
+
+  </div>
+</div>
