@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   get "/directors/:id/edit" => 'directors#edit'
   patch "/directors/:id" => 'directors#update'
 
+  # get "/signup" => 'users#new'
+
+  get "/sessions/new" => 'sessions#new'
+  post "/sessions" => 'sessions#create'
+  get "/logout" => 'sessions#destroy'
+
   get "/users" => "users#index"
   get "/users/new" => 'users#new'
   post "/users" => 'users#create'
