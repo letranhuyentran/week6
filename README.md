@@ -8,6 +8,9 @@ This week, we will cover:
 * User Authentication (new)
 * Model Validations (maybe)
 
+You should check out the chapter on model validations [in the Rails Guides](Here's the section on model validations: http://guides.rubyonrails.org/active_record_validations.html
+).
+
 ### Getting Started
 
 1. Download a ZIP of this repository.  Unzip the contents.
